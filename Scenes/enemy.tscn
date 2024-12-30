@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhefv8qwbhphd"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_dprp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u107"]
+size = Vector2(10, 100)
+
+[node name="Enemy" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_dprp7")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 100)
+default_color = Color(0.562073, 0.232989, 0.222373, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 49)
+shape = SubResource("RectangleShape2D_4u107")

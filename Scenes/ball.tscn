@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg11oiwn17hb6"]
+
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_qiqt8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vmk1p"]
+albedo_color = Color(0.941176, 0.341176, 0.164706, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mwiuj"]
+material = SubResource("StandardMaterial3D_vmk1p")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxg7n"]
+
+[node name="Ball" type="CharacterBody2D"]
+motion_mode = 1
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_max_angle = 1.5708
+script = ExtResource("1_qiqt8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_mwiuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yxg7n")
